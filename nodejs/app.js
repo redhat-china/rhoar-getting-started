@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 let configMap;
 let message = "%s!";
 
-app.use('/api/greeting', (request, response) => {
+app.use('/api/booking', (request, response) => {
   const name = (request.query && request.query.name) ? request.query.name : 'ROW10086';
   return response.send({booking: message.replace(/%s/g, name)});
 });

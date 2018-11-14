@@ -21,16 +21,16 @@ import javax.ws.rs.core.Response;
 @Path("/")
 public class GreetingResource {
 
-    private static final String template = "Hello, %s!";
+    private static final String template = "%s";
 
     @GET
-    @Path("/greeting")
+    @Path("/cooking")
     @Produces("application/json")
     public Greeting greeting(@QueryParam("name") String name) {
         if (!ApplicationConfig.IS_ALIVE.get()) {
             throw new WebApplicationException(Response.Status.SERVICE_UNAVAILABLE);
         }
-        String suffix = name != null ? name : "World";
+        String suffix = name != null ? name : "Egg";
         return new Greeting(String.format(template, suffix));
     }
 

@@ -1,21 +1,22 @@
-package com.example.service;
+package com.example;
 
-import javax.persistence.*;
-
-@Entity
 public class Fruit {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
-
+    
     public Fruit() {
     }
 
     public Fruit(String type) {
         this.name = type;
+    }
+
+    public Fruit(Long id, String name) {
+        super();
+        this.id = id;
+        this.name = name;
     }
 
     public Long getId() {
@@ -37,5 +38,8 @@ public class Fruit {
     @Override
     public String toString() {
         return "Fruit{ name='" + name + '\'' + " }";
-    }
+}
+
+   
+    
 }

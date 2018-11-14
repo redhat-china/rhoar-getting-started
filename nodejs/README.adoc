@@ -1,0 +1,51 @@
+= Quick Start Steps
+
+[source, text]
+.*1. 安装*
+----
+curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
+yum install nodejs npm
+----
+
+[source, text]
+.*2. 安装 Dependencies*
+----
+npm install
+----
+
+[source, text]
+.*3. 本地运行并测试*
+----
+$ npm start
+
+> nodejs-configmap@1.0.0 start /home/kylin/src/rhoar-getting-started/nodejs
+> node .
+
+$ curl http://localhost:8080/api/booking?name=ABC123
+{"booking":"ABC123!"}
+----
+
+[source, text]
+.*4. 登录 OpenShift 创建工程*
+----
+$ oc login https://master.cmcc.com:8443 -u admin -p admin
+$ oc new-project rhoar-nodejs
+----
+
+[source, text]
+.**
+----
+
+----
+
+[source, text]
+.**
+----
+
+----
+
+[source, text]
+.**
+----
+
+----

@@ -1,0 +1,20 @@
+= 快速开始
+
+[source, text]
+.*1. 部署到 OpenShift*
+----
+$ oc login https://master.cmcc.com:8443 -u admin -p admin
+$ oc new-project rhoar-nodejs
+
+$ mvn package fabric8:deploy -Popenshift
+----
+
+[source, text]
+.*2. 测试*
+----
+$ curl http://rhoar-thorntail-cooking-rhoar-thorntail.apps.cmcc.com/api/cooking
+{"content":"Egg"}
+
+$ curl http://rhoar-thorntail-cooking-rhoar-thorntail.apps.cmcc.com/api/cooking?name=Par
+{"content":"Par"}
+----
