@@ -15,11 +15,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 let configMap;
-let message = "Default hard-coded greeting: Hello, %s!";
+let message = "%s!";
 
 app.use('/api/greeting', (request, response) => {
-  const name = (request.query && request.query.name) ? request.query.name : 'World';
-  return response.send({content: message.replace(/%s/g, name)});
+  const name = (request.query && request.query.name) ? request.query.name : 'ROW10086';
+  return response.send({booking: message.replace(/%s/g, name)});
 });
 
 // set health check
