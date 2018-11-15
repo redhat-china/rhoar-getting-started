@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 let configMap;
-let message = "%s!";
+let message = "%s";
 
 app.use('/api/booking', (request, response) => {
   const name = (request.query && request.query.name) ? request.query.name : 'ROW10086';

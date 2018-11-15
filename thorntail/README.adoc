@@ -1,20 +1,28 @@
 = 快速开始
 
 [source, text]
-.*1. 部署到 OpenShift*
+.*1. 本地测试*
 ----
-$ oc login https://master.cmcc.com:8443 -u admin -p admin
-$ oc new-project rhoar-nodejs
+$ mvn thorntail:run
 
-$ mvn package fabric8:deploy -Popenshift
+$ curl http://localhost:8080/api/cooking
+{"content":"Egg"}
+
+$ curl http://localhost:8080/api/cooking?name=Par
+{"content":"Par"}
 ----
 
 [source, text]
-.*2. 测试*
+.*2. 部署到 OpenShift*
 ----
-$ curl http://rhoar-thorntail-cooking-rhoar-thorntail.apps.cmcc.com/api/cooking
+$ oc login https://master.example.com:8443 -u admin -p admin
+$ oc new-project rhoar-thorntail
+
+$ mvn package fabric8:deploy -Popenshift
+
+$ curl http://cooking-rhoar-thorntail.apps.example.com/api/cooking
 {"content":"Egg"}
 
-$ curl http://rhoar-thorntail-cooking-rhoar-thorntail.apps.cmcc.com/api/cooking?name=Par
+$ curl http://cooking-rhoar-thorntail.apps.example.com/api/cooking?name=Par
 {"content":"Par"}
 ----

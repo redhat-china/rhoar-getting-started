@@ -21,6 +21,9 @@ $ npm start
 > nodejs-configmap@1.0.0 start /home/kylin/src/rhoar-getting-started/nodejs
 > node .
 
+$ curl http://localhost:8080/api/booking
+{"booking":"ROW10086!"}
+
 $ curl http://localhost:8080/api/booking?name=ABC123
 {"booking":"ABC123!"}
 ----
@@ -28,20 +31,24 @@ $ curl http://localhost:8080/api/booking?name=ABC123
 [source, text]
 .*4. 登录 OpenShift 创建工程*
 ----
-$ oc login https://master.cmcc.com:8443 -u admin -p admin
+$ oc login https://master.example.com:8443 -u admin -p admin
 $ oc new-project rhoar-nodejs
 ----
 
 [source, text]
-.**
+.*5. 部署到 OpenShift*
 ----
-
+$ npm run openshift
 ----
 
 [source, text]
-.**
+.*6. 测试*
 ----
+$ curl http://booking-rhoar-nodejs.apps.example.com/api/booking
+{"booking":"ROW10086!"}
 
+$ curl http://booking-rhoar-nodejs.apps.example.com/api/booking?name=ABC123
+{"booking":"ABC123!"}
 ----
 
 [source, text]

@@ -1,0 +1,39 @@
+= Quick Start Steps
+
+[source, text]
+.*1. 本地测试*
+----
+$ mvn compile vertx:run
+
+$ curl http://localhost:8080/api/inventory
+{
+  "content" : "RHEL 7.6"
+}
+
+$ curl http://localhost:8080/api/inventory?name="OpenShift"
+{
+  "content" : "OpenShift"
+}
+----
+
+[source, text]
+.*2. 部署到 OpenShift*
+----
+$ oc login https://master.example.com:8443 -u admin -p admin
+$ oc new-project rhoar-vertx
+
+$ mvn package fabric8:deploy -Popenshift
+
+# curl http://inventory-rhoar-vertx.apps.example.com/api/inventory
+{
+  "content" : "RHEL 7.6"
+}
+
+# curl http://inventory-rhoar-vertx.apps.example.com/api/inventory?name="OpenShift"
+{
+  "content" : "OpenShift"
+}
+----
+
+
+http://appdev.openshift.io/docs/vertx-runtime.html#mission-http-api-vertx
