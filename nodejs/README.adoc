@@ -51,8 +51,3 @@ $ curl http://booking-rhoar-nodejs.apps.example.com/api/booking?name=ABC123
 {"booking":"ABC123!"}
 ----
 
-[source, text]
-.**
-----
-
-----

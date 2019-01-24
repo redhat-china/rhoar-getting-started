@@ -12,8 +12,15 @@ $ curl http://localhost:8080/api/fruits/1
 {"id":1,"name":"Cherry"}
 ----
 
+*2. 查看 API 文档*
+
+* 文档链接 - http://localhost:8080/api/swagger.json
+* UI 链接 - http://localhost:8080/swagger-ui.html
+
+image:fruits-service-docs.png[]
+
 [source, text]
-.*2. 部署到 OpenShift*
+.*3. 部署到 OpenShift*
 ----
 $ oc login https://master.cmcc.com:8443 -u admin -p admin
 $ oc new-project rhoar-spring
