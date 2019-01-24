@@ -37,7 +37,7 @@ public class SwaggerConfig {
 				, "An Service for CRUD Operations towards fruits repositories"
 				, "0.0.1"
 				, "Terms of service"
-				, new Contact("Kylin Soong", "ksoong.org", "ksoong@redhat.com")
+				, new Contact("Kylin Soong", "http://ksoong.org/docs", "ksoong@redhat.com")
 				, "Apache License Version 2.0"
 				, "http://www.apache.org/licenses/");
 		

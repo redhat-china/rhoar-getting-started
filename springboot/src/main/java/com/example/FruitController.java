@@ -39,7 +39,7 @@ public class FruitController {
             value = "Get fruit by id",
             notes = "Returns fruit for id specified.")
     @ApiResponses(value = {@ApiResponse(code = 404, message = "Fruit not found")})
-    public Fruit getFruit(@ApiParam("Fruit id") @PathVariable("id") Long id) {
+    public Fruit getFruit(@ApiParam(value = "Fruit id", required = true) @PathVariable("id") Long id) {
         for(int i = 0 ; i < repository.size() ; i ++) {
             if(repository.get(i).getId() == id) {
                 return repository.get(i);
@@ -62,7 +62,7 @@ public class FruitController {
             value = "Update a exist fruit",
             notes = "Update a exist fruit in repositories, return the updated value")
     @ApiResponses(value = {@ApiResponse(code = 404, message = "Fruit not found")})
-    public Fruit update(@RequestBody  Fruit fruit, @ApiParam("Fruit id") @PathVariable Long id) {
+    public Fruit update(@RequestBody  Fruit fruit, @ApiParam(value = "Fruit id", required = true) @PathVariable Long id) {
     	 for(int i = 0 ; i < repository.size() ; i ++) {
              if(repository.get(i).getId() == id) {
             	 repository.get(i).setName(fruit.getName());
@@ -81,7 +81,7 @@ public class FruitController {
     @ApiOperation(
             value = "Delete a exist fruit",
             notes = "Delete a exist fruit in repositories")
-    public void delete(@ApiParam("Fruit id") @PathVariable Long id) {
+    public void delete(@ApiParam(value = "Fruit id", required = true) @PathVariable Long id) {
     	Fruit fruit = null;
     	for(int i = 0 ; i < repository.size() ; i ++) {
             if(repository.get(i).getId() == id) {
