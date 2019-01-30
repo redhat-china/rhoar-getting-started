@@ -3,7 +3,7 @@ kind: Route
 metadata:
   name: ${project.artifactId}
 spec:
-  host: inventory-backend-services.apps.example.com
+  host: cooking-backend-services.apps.example.com
   port:
     targetPort: 8080
   to:

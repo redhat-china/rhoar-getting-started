@@ -20,7 +20,7 @@ $ curl http://localhost:8080/api/inventory?name="OpenShift"
 .*2. 部署到 OpenShift*
 ----
 $ oc login https://master.example.com:8443 -u admin -p admin
-$ oc new-project rhoar-vertx
+$ oc project backend-services
 
 $ mvn package fabric8:deploy -Popenshift
 

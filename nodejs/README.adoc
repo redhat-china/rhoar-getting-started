@@ -18,7 +18,7 @@ npm install
 ----
 $ npm start
 
-> nodejs-configmap@1.0.0 start /home/kylin/src/rhoar-getting-started/nodejs
+> rhoar-nodejs-booking@1.0.0 start /home/kylin/src/rhoar-getting-started/nodejs
 > node .
 
 $ curl http://localhost:8080/api/booking
@@ -32,7 +32,7 @@ $ curl http://localhost:8080/api/booking?name=ABC123
 .*4. 登录 OpenShift 创建工程*
 ----
 $ oc login https://master.example.com:8443 -u admin -p admin
-$ oc new-project rhoar-nodejs
+$ oc project backend-services
 ----
 
 [source, text]

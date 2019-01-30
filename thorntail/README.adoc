@@ -6,7 +6,7 @@
 $ mvn thorntail:run
 
 $ curl http://localhost:8080/api/cooking
-{"content":"Egg"}
+[{"content":"Par"},{"content":"Bar"},{"content":"Egg"}]
 
 $ curl http://localhost:8080/api/cooking?name=Par
 {"content":"Par"}
@@ -16,13 +16,19 @@ $ curl http://localhost:8080/api/cooking?name=Par
 .*2. 部署到 OpenShift*
 ----
 $ oc login https://master.example.com:8443 -u admin -p admin
-$ oc new-project rhoar-thorntail
+$ oc project backend-services
 
 $ mvn package fabric8:deploy -Popenshift
 
 $ curl http://cooking-rhoar-thorntail.apps.example.com/api/cooking
-{"content":"Egg"}
+[{"content":"Par"},{"content":"Bar"},{"content":"Egg"}]
 
 $ curl http://cooking-rhoar-thorntail.apps.example.com/api/cooking?name=Par
 {"content":"Par"}
 ----
+
+*3. Swagger 文件*
+
+Swagger 文件路径：/api/swagger.json，例如：
+
+* http://cooking-backend-services.apps.example.com/api/swagger.json

@@ -23,7 +23,7 @@ image:fruits-service-docs.png[]
 .*3. 部署到 OpenShift*
 ----
 $ oc login https://master.cmcc.com:8443 -u admin -p admin
-$ oc new-project rhoar-spring
+$ oc project backend-services
 
 $ mvn package fabric8:deploy -Popenshift
 

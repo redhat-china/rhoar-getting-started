@@ -15,15 +15,15 @@
  */
 package com.example;
 
-public class Greeting {
+public class Cooking {
 
     private final String content;
 
-    public Greeting() {
+    public Cooking() {
         this.content = null;
     }
 
-    public Greeting(String content) {
+    public Cooking(String content) {
         this.content = content;
     }
 

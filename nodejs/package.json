@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-configmap",
+  "name": "rhoar-nodejs-booking",
   "description": "This project demonstrates application and runtime configuration leveraging external configuration sources",
   "version": "1.0.0",
   "author": "Red Hat, Inc.",
