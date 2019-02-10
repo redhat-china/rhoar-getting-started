@@ -27,10 +27,10 @@ $ oc project backend-services
 
 $ mvn package fabric8:deploy -Popenshift
 
-$ curl http://fruits-rhoar-spring.apps.cmcc.com/api/fruits
+$ curl http://fruits-rhoar-spring.apps.example.com/api/fruits
 [{"id":1,"name":"Cherry"},{"id":2,"name":"Apple"},{"id":3,"name":"Banana"}]
 
-$ curl http://fruits-rhoar-spring.apps.cmcc.com/api/fruits/1
+$ curl http://fruits-rhoar-spring.apps.example.com/api/fruits/1
 {"id":1,"name":"Cherry"}
 ----
 
